@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "GFG Problem Tracker",
+  "version": "1.0",
+  "description": "Tracks visited GeekforGeeks problems",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://practice.geeksforgeeks.org/problems/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
